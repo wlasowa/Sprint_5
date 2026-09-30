@@ -1,4 +1,5 @@
 import locators
+import data
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -12,14 +13,14 @@ class TestAd:
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((locators.AD_MODAL)))
 
         modal = driver.find_element(*locators.AD_MODAL)
-        assert modal.text == locators.AD_MODAL_TEXT, f"Заголовок окна {modal.text} отличается от ожидаемого {locators.AD_MODAL_TEXT}"
+        assert modal.text == data.AD_MODAL_TEXT, f"Заголовок окна {modal.text} отличается от ожидаемого {locators.AD_MODAL_TEXT}"
 
     def test_ad_authorized(self, driver):
 
         driver.find_element(*locators.LOGIN_BUTTON).click()
 
-        driver.find_element(*locators.EMAIL_FIELD).send_keys(locators.EMAIL_EXISTS)
-        driver.find_element(*locators.PASSWORD_FIELD).send_keys(locators.PASSWORD)
+        driver.find_element(*locators.EMAIL_FIELD).send_keys(data.EMAIL_EXISTS)
+        driver.find_element(*locators.PASSWORD_FIELD).send_keys(data.PASSWORD)
 
         driver.find_element(*locators.ENTER_BUTTON).click()
 
@@ -27,11 +28,11 @@ class TestAd:
         
         driver.find_element(*locators.AD_BUTTON).click()
 
-        title = locators.BOOK_TITLE
-        price = locators.PRICE
+        title = data.BOOK_TITLE
+        price = data.PRICE
 
         driver.find_element(*locators.TITLE_FIELD).send_keys(title)
-        driver.find_element(*locators.DESCR_FIELD).send_keys(locators.BOOK_DESCRIPTION)
+        driver.find_element(*locators.DESCR_FIELD).send_keys(data.BOOK_DESCRIPTION)
         driver.find_element(*locators.PRICE_FIELD).send_keys(price)
 
         driver.find_element(*locators.CATEGORY_BUTTON).click()

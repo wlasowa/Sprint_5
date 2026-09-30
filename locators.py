@@ -1,15 +1,4 @@
-import random
 from selenium.webdriver.common.by import By
-
-DOSKA_URL = "https://qa-desk.education-services.ru/"
-EMAIL_RANDOM = f"testmail{random.randint(100, 999)}@ya.ru"
-EMAIL_EXISTS = "testmail8@ya.ru"
-PASSWORD = "123"
-USER_NAME_CONST = 'User.'
-AD_MODAL_TEXT = 'Чтобы разместить объявление, авторизуйтесь'
-BOOK_TITLE = f"Москва {random.randint(2030, 2099)}"
-BOOK_DESCRIPTION = "Новый фантастический роман"
-PRICE = random.randint(10, 999)
 
 # Главная страница
 LOGIN_BUTTON = (By.XPATH, ".//button[text()='Вход и регистрация']")

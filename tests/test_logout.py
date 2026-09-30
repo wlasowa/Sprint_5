@@ -1,4 +1,5 @@
 import locators
+import data
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -9,8 +10,8 @@ class TestLogout:
 
         driver.find_element(*locators.LOGIN_BUTTON).click()
 
-        driver.find_element(*locators.EMAIL_FIELD).send_keys(locators.EMAIL_EXISTS)
-        driver.find_element(*locators.PASSWORD_FIELD).send_keys(locators.PASSWORD)
+        driver.find_element(*locators.EMAIL_FIELD).send_keys(data.EMAIL_EXISTS)
+        driver.find_element(*locators.PASSWORD_FIELD).send_keys(data.PASSWORD)
 
         driver.find_element(*locators.ENTER_BUTTON).click()
 

@@ -1,10 +1,10 @@
 import pytest
-import locators
+import urls
 from selenium import webdriver
 
 @pytest.fixture
 def driver():
     browser = webdriver.Chrome()
-    browser.get(locators.DOSKA_URL)
+    browser.get(urls.DOSKA_URL)
     yield browser
     browser.quit()
