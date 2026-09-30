@@ -1,5 +1,5 @@
 import pytest
-from tests import locators
+import locators
 from selenium import webdriver
 
 @pytest.fixture
